@@ -28,14 +28,13 @@
 
 CC=i386-elf-gcc
 
-# DELETE NON EXISTING SOURCES !!!!!!
 SOURCES=src/boot.o src/main.o src/gdt.o src/lgdt.o src/idt.o src/lidt.o \
 src/irq.o src/ps2.o src/keyboard.o src/ports.o src/string.o src/stdio.o \
 src/vfprintf.o
 
 CFLAGS=-nostdlib -fno-builtin -fno-stack-protector -std=gnu99 -ffreestanding \
--Wall -Wextra -I./include -I../libc/include -O2 -D__kernel__
-LDFLAGS=-Tlinker.ld -L../libc
+-Wall -Wextra -I./include -O2 -D__kernel__
+LDFLAGS=-Tlinker.ld
 ASFLAGS=-felf32
 
 all: $(SOURCES) link
