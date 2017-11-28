@@ -3,6 +3,12 @@
 
 This is a 2048 game which doesn't need an operating system to work. It does need a multiboot-compliant bootloader, like GRUB, though.
 
+Screenshots
+-----------
+![Screenshot #0](./images/0.png)
+![Screenshot #1](./images/1.png)
+![Screenshot #2](./images/2.png)
+
 Requirements
 ------------
 At least a 32-bit x86 (Intel or AMD, probably others exist, too) computer (64-bit works, too). A keyboard which is attached to the computer with PS/2, but I've heard some computers have built in buggy PS/2 emulation for USB keyboards. 32 MB of RAM in bochs seemed to be enough, but it might work with less. A VGA compliant graphics card. This doesn't mean that you can plug in that blue VGA plug in your computer, this means that your graphics card should not be older than 1990 or so. If you have such a GPU, I am actually surprised you're here and reading this.
@@ -21,9 +27,9 @@ How to get it running
 ---------------------
 1. Compile the code by running `make all` (this does need a normal nasm, custom gcc and binutils, http://wiki.osdev.org/GCC_Cross-Compiler look here for more info) or by getting a compiled kernel from GitHub releases.
 2. Now you have a choice:
-  a) Put the kernel in an .iso file by running update_image.sh script (if I recall correctly, you need grub and xorriso for it to work, probably also some grub-utils). I won't put an iso here just because I will need to find a link to the GRUB source code and link the correct version and I'm too lazy for that :P
-  b) If you really want to test if it works on your computer with qemu, there's no need to create an .iso. You can just do `qemu-system-i386 -kernel whatever_you_named_the_kernel`, if you have qemu-system-x86_64 or any other compatible architecture it should work, too.
-  c) If you already are using GRUB as your bootloader, you can add a menu entry that's similar to the one you can find in grub.cfg file pointing to the correct location of the 2048/Arkta kernel. If you do this, don't forget to run `update-grub`.
+    * Put the kernel in an .iso file by running update_image.sh script (if I recall correctly, you need grub and xorriso for it to work, probably also some grub-utils). I won't put an iso here just because I will need to find a link to the GRUB source code and link the correct version and I'm too lazy for that :P
+    * If you really want to test if it works on your computer with qemu, there's no need to create an .iso. You can just do `qemu-system-i386 -kernel whatever_you_named_the_kernel`, if you have qemu-system-x86_64 or any other compatible architecture it should work, too.
+    * If you already are using GRUB as your bootloader, you can add a menu entry that's similar to the one you can find in grub.cfg file pointing to the correct location of the 2048/Arkta kernel. If you do this, don't forget to run `update-grub`.
 3. There you go, enjoy this pinnacle of gaming.
 
 How to use it
